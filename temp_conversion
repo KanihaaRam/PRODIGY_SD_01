@@ -1,0 +1,33 @@
+TEMPERATURE CONVERSION
+{
+    float value;
+    char unit[10];
+
+    printf("Welcome to the temperature converter!\n");
+    printf("Enter the temperature value: ");
+    scanf("%f", &value);
+    printf("Enter the unit of measurement (Celsius, Fahrenheit, or Kelvin): ");
+    scanf("%s", unit);
+
+    if (strcmp(unit, "Celsius") == 0 || strcmp(unit, "celsius")
+    == 0) {
+        float fahrenheit = c_to_f(value);
+        float kelvin = c_to_k(value);
+        printf("%.2f Celsius is equal to %.2f Fahrenheit and %.2f Kelvin.\n", value, fahrenheit, kelvin);
+    } 
+    else if (strcmp(unit, "Fahrenheit") == 0 || strcmp(unit, "fahrenheit") == 0) {
+        float celsius = f_to_c(value);
+        float kelvin = f_to_k(value);
+        printf("%.2f Fahrenheit is equal to %.2f Celsius and %.2f Kelvin.\n", value, celsius, kelvin);
+    }
+    else if (strcmp(unit, "Kelvin") == 0 || strcmp(unit, "kelvin") == 0) {
+        float celsius = k_to_c(value);
+        float fahrenheit = k_to_f(value);
+        printf("%.2f Kelvin is equal to %.2f Celsius and %.2f Fahrenheit.\n", value, celsius, fahrenheit);
+    }
+    else {
+        printf("Invalid unit entered. Please use 'Celsius', 'Fahrenheit', or 'Kelvin'.\n");
+    }
+
+    return 0;
+}
